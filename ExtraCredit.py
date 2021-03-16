@@ -15,12 +15,24 @@ def intakeFile():
         else:
             return return_file
 
+################################################## 
+#            findTowerLocations()                #
+# This function calls the remove houses function #
+# and keeps track of the house list to exit when #
+# there are no more houses.                      #
+##################################################
+
 def findTowerLocations(houses, towers):
     while len(houses) > 0:
         removeHouses(houses, towers)
     return
         
-
+##################################
+#       removeHouses()           #
+# removes houses that are within #
+# a 4 mile radius of the most    #
+# recently placed base station   #
+##################################
 def removeHouses(houses, towers):
     towers.append(houses[0] + 4) 
     towerLocation = houses[0] + 4
@@ -30,8 +42,12 @@ def removeHouses(houses, towers):
         else:
             return
 
+#####################################
+#       writeTowerLocations()       #
+# prints tower locations to file    #
+#####################################
 def writeTowerLocations(towers):
-    with open("TowerLocations.txt", "a") as appendFile:
+    with open("StationLocations.txt", "a") as appendFile:
         i = 1
         for item in towers:
             appendFile.write("Base Station " + str(i) + ": mile %s\n" % item)
@@ -53,9 +69,9 @@ retrievedFile.close()            #close the file
 
 houseDistances = [float(x) for x in houseDistances] #make the house locations list ordered from closest to furthest.
 houseDistances.sort()           
-print(houseDistances)
 
-towerFile = open("TowerLocations.txt", "w+")        #create or open file
+
+towerFile = open("StationLocations.txt", "w+")        #create or open file
 towerFile.write("Base Station Locations\n")                #write to output file
 towerFile.close()                                   #close output file.
 
@@ -64,4 +80,4 @@ towerLocations = []
 findTowerLocations(houseDistances, towerLocations)
 
 writeTowerLocations(towerLocations)
-print("View your tower placements in the TowerLocations.txt file!")
+print("View your tower placements in the StationLocations.txt file!")
