@@ -1,5 +1,6 @@
 # ExtraCredit-Algorithm-Design
 Extra Credit Assignment for CSC 3430
+Project by Duncan Hook
 
 For this extra credit assignment I chose to work on the second problem: Implement the algorithm to solve Problem 5 of Chapter 4 of the Kleinberg Book.
 
