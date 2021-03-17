@@ -1,3 +1,22 @@
+import sys
+
+#########################################
+#           verifyValues()              #
+# Ensures all items in user file can be #
+# changed into numeric values           #
+#########################################
+def verifyValues(values):
+    for item in values:
+        #testValue = item
+        try:
+            float(item)
+        except ValueError:
+            print("Please ensure values in file are only numeric values and re-run program.")
+            print("File contains item \"" + item + "\" which is non numeric")
+            sys.exit()
+        else: 
+            continue
+    return        
 
 
 #########################################
@@ -66,6 +85,8 @@ content = retrievedFile.read()   #read user file and store the contents
 
 houseDistances = content.split() #split the conent into a list
 retrievedFile.close()            #close the file
+
+verifyValues(houseDistances)
 
 houseDistances = [float(x) for x in houseDistances] #make the house locations list ordered from closest to furthest.
 houseDistances.sort()           
