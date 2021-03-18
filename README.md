@@ -2,6 +2,8 @@
 Extra Credit Assignment for CSC 3430
 Project by Duncan Hook
 
+Video of program running: https://youtu.be/UGE-8Dsxp9U
+
 For this extra credit assignment I chose to work on the second problem: Implement the algorithm to solve Problem 5 of Chapter 4 of the Kleinberg Book.
 
 I do not believe this program has any external requirements, but I included a requirements file just in case something is necessary that I don't know about. 
